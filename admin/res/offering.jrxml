@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="offering" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7147de07-9a48-4e90-b81a-c41b868ee0a6">
+	<parameter name="fullname" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="benefitName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="60" width="560" height="1" uuid="265e7a64-90c4-40c3-b9fb-a2affe7625f2"/>
+			</line>
+			<staticText>
+				<reportElement x="280" y="0" width="274" height="40" uuid="9b7cab22-d20e-42f9-a353-ad576b8509c1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman&#xD;&#xA;" size="13"/>
+				</textElement>
+				<text><![CDATA[Jalan Zingiber Volturi, Blok Tatang Rocket
+Jawa Barat, 172031]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="40" width="100" height="15" uuid="0a20991d-fa04-4236-bb54-2e8b113b048e"/>
+				<textElement>
+					<font fontName="Times New Roman&#xD;&#xA;"/>
+				</textElement>
+				<text><![CDATA[Telp : (021) 123456]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="40" width="130" height="15" uuid="d6ac238b-3895-49f8-a12c-b4c099a7e354"/>
+				<textElement>
+					<font fontName="Times New Roman&#xD;&#xA;"/>
+				</textElement>
+				<text><![CDATA[Email : jobroad@gmail.com]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="2" width="271" height="55" uuid="a8fa8667-1002-4ff7-8e57-a2d7e980734f"/>
+				<imageExpression><![CDATA["https://raw.githubusercontent.com/Final-Project-Kelompok-2/job-portal-frontend/main/projects/admin-jobroad/src/assets/jobroad.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="10" width="200" height="20" uuid="79e2bb09-a53c-4f6d-9c3e-74ef98669d1f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman&#xD;&#xA;" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Offering Letter]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="207" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="16" width="532" height="30" uuid="154d71ee-4cfd-4b1c-abc0-f43b044df6ce"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[We are pleased to offer you the position of [JobTitle] at [XXX] Company , with details as follows :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="50" width="532" height="50" uuid="8cefc02b-3acf-4286-8740-3b587f71dfd5"/>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="Proportional" lineSpacingSize="2.0"/>
+				</textElement>
+				<text><![CDATA[Name :
+Position :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="100" width="532" height="40" uuid="0483acfe-6708-4fc7-aec3-126f3a142570"/>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="Proportional" lineSpacingSize="1.5"/>
+				</textElement>
+				<text><![CDATA[Please review the attached document outlining your salary and benefits. Please note that the offering is in Gross, meaning the salary contribute to : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="140" width="532" height="50" uuid="d9d3bb92-9d3f-461c-a09e-ec6d387830d4"/>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="Proportional" lineSpacingSize="1.0"/>
+				</textElement>
+				<text><![CDATA[- [Benefit 1] 
+- [Benefit 2]
+- [Benefit 3]]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="50" width="80" height="20" uuid="b4ee7e23-8c37-40d2-8715-20b4f8bc5928"/>
+				<textFieldExpression><![CDATA[$P{fullname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="140" width="100" height="30" uuid="a42511f8-9c58-4c3e-b48e-9e91273e78b4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="243825dc-2f99-4690-a617-ab3827061bbb"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{benefitName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="30" width="532" height="58" uuid="59453aa9-f45f-466d-a5e9-a35e2c0a71fb"/>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="Proportional" lineSpacingSize="1.0"/>
+				</textElement>
+				<text><![CDATA[We will contact you once we have received the paperwork as to your start date.
+
+We look forward to welcoming you as part of the [XXX] team ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="-10" width="532" height="20" uuid="6c6f8b41-ab49-4ecc-8365-13ea2d904189"/>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="Proportional" lineSpacingSize="1.5"/>
+				</textElement>
+				<text><![CDATA[If you accept this offer, please bring the copy of this letter to the office]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="-2" y="10" width="532" height="68" uuid="8c140d92-d9e1-4ae9-ba66-e73bdeb8c0a2"/>
+				<textElement>
+					<font size="12"/>
+					<paragraph lineSpacing="Proportional" lineSpacingSize="1.0"/>
+				</textElement>
+				<text><![CDATA[Regards,
+[AdminName]
+
+XXX Company]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

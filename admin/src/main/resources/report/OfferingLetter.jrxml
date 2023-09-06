@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OfferingLetter" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59fd7e03-ea90-41a9-8fbf-fa1332990035">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Dataset1" uuid="36f2343f-29e2-4706-9020-b056ad3e6905">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+		<queryString language="SQL">
+			<![CDATA[select benefit_name as benefitName from t_benefit]]>
+		</queryString>
+		<field name="benefitName" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="fullname" class="java.lang.String"/>
+	<parameter name="positionName" class="java.lang.String"/>
+	<parameter name="companyName" class="java.lang.String"/>
+	<parameter name="adminName" class="java.lang.String"/>
+	<parameter name="salary" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select benefit_name as benefitName from t_benefit]]>
+	</queryString>
+	<field name="benefitName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="benefitname"/>
+		<property name="com.jaspersoft.studio.field.label" value="benefitname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t_benefit"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="235">
+			<line>
+				<reportElement x="0" y="60" width="560" height="1" uuid="1fd9e534-c7fa-40d0-821a-f7aa4120f72e"/>
+			</line>
+			<staticText>
+				<reportElement x="280" y="0" width="274" height="40" uuid="412026a4-85e5-4656-bd51-39a1d8696837"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="13"/>
+				</textElement>
+				<text><![CDATA[Jalan Zingiber Volturi, Blok Tatang Rocket
+Jawa Barat, 172031]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="40" width="100" height="15" uuid="fde1fe04-d720-48c1-af1f-b5ca1b441f89"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[Telp : (021) 123456]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="40" width="175" height="15" uuid="e1fb1d29-c89b-4a94-9fff-ca2a64870e25"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[Email : jobroadlawencon@gmail.com]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="2" width="271" height="55" uuid="debb4588-61b3-40b5-ae00-774758a4fd39"/>
+				<imageExpression><![CDATA["https://raw.githubusercontent.com/Final-Project-Kelompok-2/job-portal-frontend/main/projects/admin-jobroad/src/assets/jobroad.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="6" y="198" width="544" height="35" uuid="89c483c4-0a23-4b4d-8f78-870b31da95a8"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{benefitName}!=null ? "Please review the attached document that provides information about the salary and benefits": "Please review the attached document that provides information about the salary."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="172" y="68" width="190" height="30" uuid="5382fb97-5d1f-486b-b7f9-28861291a084"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Offering Letter]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="5" y="98" width="543" height="39" uuid="4681805d-9df0-495f-b35b-83b5e46e9fb6"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["We are delighted to offer you the position of "+$P{positionName} +" at "+ $P{companyName}+". We noticed your impressive skills and experience during the selection process, and we believe you would be a valuable addition to our company. Below are the details of the job offer:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="139" width="544" height="59" uuid="244e640e-dd6e-46b5-ba7f-84d6ca115df4"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Name : "+ $P{fullname}+ "\nPosition : "+$P{positionName}+ "  \nSalary : "+$P{salary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="22">
+			<textField>
+				<reportElement x="20" y="2" width="100" height="20" uuid="bdcb1c78-072b-4f4b-be70-56caa3a8be78"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="&#xD;&#xA;SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{benefitName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="3" width="10" height="19" uuid="d3d125ec-eb78-4285-a5e5-1f1a6fe9f764"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[•]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="175">
+			<textField>
+				<reportElement x="434" y="10" width="120" height="80" uuid="2ef3f16a-d5b9-4718-9b32-750fe366a508"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Regards, \n"+$P{adminName}+"\n\n\n"+$P{companyName}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="379" y="135" width="173" height="40" uuid="7d4f4820-0594-4834-9373-e2dae06a6f5f"/>
+				<imageExpression><![CDATA["https://raw.githubusercontent.com/Final-Project-Kelompok-2/job-portal-frontend/main/projects/admin-jobroad/src/assets/jobroad.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="150" width="369" height="1" uuid="14f8482c-bc12-4e25-a774-3286cdecb1da"/>
+			</line>
+			<staticText>
+				<reportElement x="100" y="130" width="156" height="24" uuid="de5c101c-176e-4a59-9a43-fd045df847f9"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[JobRoad © Copyright 2023]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="151" width="170" height="15" uuid="a72d2fd3-8c96-47c1-8fb2-d1225b5c899f"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[Email : jobroadlawencon@gmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="151" width="100" height="15" uuid="11434d66-9fa3-436b-9316-756ce5d3bbc2"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[Telp : (021) 123456]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="124">
+			<staticText>
+				<reportElement x="3" y="10" width="554" height="40" uuid="c726d5c6-9bac-4682-8473-d6df6b559d3e"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+					<paragraph lineSpacing="Proportional" lineSpacingSize="1.5"/>
+				</textElement>
+				<text><![CDATA[If you decide to accept this offer, kindly bring the copy of this letter and necessary documents to our office.
+
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="4" y="70" width="552" height="54" uuid="7127158d-8647-4de0-a2bc-3b546ecf7706"/>
+				<textElement>
+					<font fontName="&#xD;&#xA;SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Once we receive your paperwork, we will confirm your start date. We are looking forward to having you on the "+$P{companyName} +" team."]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
